@@ -19,4 +19,11 @@ jobs:
           go-version: "1.27.1"
 
       - name: Force Failure
-        run: (exit 1)
+        run: go version
+
+# A workflow is triggered when an event occurs in your GitHub repository. Ex: Pull Requests
+# ci -  a single workflow called "ci", but we could have named it anything.
+
+# A workflow is made up of one or more jobs. A job is a set of steps that run on the same runner, which is just a virtual machine that runs your job on GitHub's servers.
+
+# A job is made up of one or more steps. A step is a single task that can run commands, a script, or an action. For example, the steps of a job might include:
