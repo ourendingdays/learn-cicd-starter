@@ -33,7 +33,7 @@ jobs:
         run: go test ./... -cover
 
   style:
-    name: Style Check
+    name: Style
     runs-on: ubuntu-latest
 
     steps:
@@ -48,7 +48,7 @@ jobs:
       - name: Run Go fmt
         run: test -z $(go fmt ./...)
 
-        
+
 # A workflow is triggered when an event occurs in your GitHub repository. Ex: Pull Requests
 # ci -  a single workflow called "ci", but we could have named it anything.
 
