@@ -47,6 +47,12 @@ jobs:
 
       - name: Run Go fmt
         run: test -z $(go fmt ./...)
+      
+      - name: Install staticcheck
+        run: go install honnef.co/go/tools/cmd/staticcheck@latest
+
+      - name: Run StaticCheck
+        run: staticcheck ./...
 
 
 # A workflow is triggered when an event occurs in your GitHub repository. Ex: Pull Requests
