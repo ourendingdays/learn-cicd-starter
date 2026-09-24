@@ -30,7 +30,7 @@ jobs:
         run: go version
 
       - name: Run Tests
-        run: go test ./...
+        run: go test ./... -cover
 
 # A workflow is triggered when an event occurs in your GitHub repository. Ex: Pull Requests
 # ci -  a single workflow called "ci", but we could have named it anything.
