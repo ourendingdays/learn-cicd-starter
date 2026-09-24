@@ -1,5 +1,4 @@
-
-[![ci](https://github.com/ourendingdays/learn-cicd-starter/actions/workflows/ci.yml/badge.svg?branch=addtests)](https://github.com/ourendingdays/learn-cicd-starter/actions/workflows/ci.yml)
+![CI tests](https://github.com/ourendingdays/learn-cicd-starter/actions/workflows/ci.yml/badge.svg)
 
 # learn-cicd-starter (Notely)
 
