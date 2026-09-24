@@ -1,0 +1,40 @@
+name: ci
+
+# specifies when the workflow should run. In this case, it runs on pull requests to the main branch.
+on:
+  pull_request:
+    branches: [main]
+
+# jobs key is a  list of jobs that make up the workflow.
+jobs:
+  tests:
+    name: Tests
+    # uns-on key specifies the type of runner to use
+    runs-on: ubuntu-latest
+
+    steps:
+      # this first step checks out the code by using the pre-built checkout action to clone the repository into the runner. It is necessary to have the code available for subsequent steps.
+      - name: Check out code
+        uses: actions/checkout@v6
+
+      # this second step sets up Go by using the pre-built setup-go action to configure a Go environment for use in workflows.
+      - name: Set up Go
+        # The uses key specifies the action to use, and the with key specifies the inputs to the action.
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.27.1"
+
+      # this third step runs the go version command to print the version of Go installed in the runner. 
+      #The run key specifies the command to run. The run key is used to run arbitrary command-line commands in the runner.
+      - name: Go Version
+        run: go version
+
+      - name: Run Tests
+        run: go test ./... -cover
+
+# A workflow is triggered when an event occurs in your GitHub repository. Ex: Pull Requests
+# ci -  a single workflow called "ci", but we could have named it anything.
+
+# A workflow is made up of one or more jobs. A job is a set of steps that run on the same runner, which is just a virtual machine that runs your job on GitHub's servers.
+
+# A job is made up of one or more steps. A step is a single task that can run commands, a script, or an action. For example, the steps of a job might include:
