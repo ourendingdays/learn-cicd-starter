@@ -31,6 +31,35 @@ jobs:
 
       - name: Run Tests
         run: go test ./... -cover
+      
+      - name: Install gosec
+        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
+
+      - name: Security check
+        run: gosec ./...
+        
+  style:
+    name: Style
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6
+
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.27.1"
+
+      - name: Run Go fmt
+        run: test -z $(go fmt ./...)
+      
+      - name: Install staticcheck
+        run: go install honnef.co/go/tools/cmd/staticcheck@latest
+
+      - name: Run StaticCheck
+        run: staticcheck ./...
+
 
 # A workflow is triggered when an event occurs in your GitHub repository. Ex: Pull Requests
 # ci -  a single workflow called "ci", but we could have named it anything.

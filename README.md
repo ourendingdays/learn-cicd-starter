@@ -25,3 +25,9 @@ go build -o notely && ./notely
 You do *not* need to set up a database or any interactivity on the webpage yet. Instructions for that will come later in the course!
 
 My own version of Boot.dev's Notely app.
+
+# What to Test for
+1. Code Coverage `go test ./... -cover`
+2. Formatting, aestethic code appearance, code style - avoid bikeshedding Ex: `go fmt ./...`
+3. Linting, error analysis Ex: `staticcheck ./...`
+4. Security vulnerabilities Ex: `gosec ./...`
