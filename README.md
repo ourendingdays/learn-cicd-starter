@@ -31,3 +31,4 @@ My own version of Boot.dev's Notely app.
 2. Formatting, aestethic code appearance, code style - avoid bikeshedding Ex: `go fmt ./...`
 3. Linting, error analysis Ex: `staticcheck ./...`
 4. Security vulnerabilities Ex: `gosec ./...`
+5. cd
